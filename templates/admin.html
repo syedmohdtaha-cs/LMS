@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script>
+      function validate(){
+        var name=document.forms["RegForm"]['exampleInputName'];
+        var author=document.forms["RegForm"]['exampleInputAuthor'];
+        var category=document.forms["RegForm"]['exampleInputCategory'];
+        var url=document.forms["RegForm"]['exampleInputURL'];
+        var count=document.forms["RegForm"]['exampleInputCount'];
+        if (name.value == ""){
+          window.alert("Please enter Book_name");
+          return false;
+        }
+        if (author.value == ""){
+          window.alert("Please enter Author_name");
+          return false;
+        }
+        console.log(count)
+        if (count.value =="" || typeof count.value !== "number" ){
+          window.alert("Please enter Count");
+          return false;
+        }
+        if (category.value == ""){
+          window.alert("Please enter Category");
+          return false;
+        }
+        
+      
+
+        return true;
+      }
+      </script>
+  </head>
+  
+  <body class="my-login-page" >
+    <section class="h-100 ">
+      <div class="container h-100 mt-5" >
+        <div class="row justify-content-md-center h-100 mt-5" >
+          <div class="card-wrapper">
+            <div class="card fat">
+              <div class="card-body" style="width: 40rem;">
+                <h4 class="card-title">Add Book</h4>
+                <form action="/submit" method="POST" class="my-login-validation" onsubmit="validate()">
+                  <div class="form-group">
+                    <label for="exampleInputName">Book Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="exampleInputName"
+                      placeholder="Book Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputAuthor">Author</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="exampleInputAuthor"
+                      placeholder="Author"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputURL">Cover URL</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="exampleInputURL"
+                      placeholder="URL"
+                    />
+                  </div>
+
+                  <label for="exampleInputCategory">Category</label>
+                  <select  class="form-select form-group form-control" aria-label="Default select example" name="exampleInputCategory">
+                    
+              
+                    <option value="Comic Book">Comic Book</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Action">Action</option>
+                    <option value="Others">Others</option>
+
+                  </select>
+                  <div class="form-group">
+                    <label for="exampleInputCount">Count</label>
+                    <input
+                      type="number"
+                      min="1"
+                      class="form-control"
+                      name="exampleInputCount"
+                      placeholder="Count"
+                      required
+                    />
+                  </div>
+                  
+                  <div class="form-group m-0">
+                    <button type="submit" class="btn btn-primary btn-block">
+                      Add
+                    </button>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+            <div class="footer mt-5 text-center">
+              Copyright &copy; 2021 &mdash; Group B2
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
